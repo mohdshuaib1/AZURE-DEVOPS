@@ -1,0 +1,33 @@
+DAY1-->
+For AZURE DEVOPS, the first step is to learn about the LINUX commands and their ARCHITECTURE. 
+MOST IMPORTANT IS IN LINUX IS 
+KERNEL--> The kernel is the core component of the Linux operating system
+          some key points about it.
+          (1)Open Source
+          (2)Security
+          (3)Multi-User and Multi-Tasking 
+          (4)Hardware Support
+          (5)File Systems   ETC..
+
+After some brief information about it, I am going to discuss something in COMMANDS and their Syntax,
+COMMAND SYNTAX-->
+                (1)Command--To perform some actions!
+                (2)Option-- To apply filters on the Commands result!
+                (3)Arguments-- To find the source and the Destination!
+DAY2-->
+COMMANDS AND ITS USES
+COMMANDS                                           USES
+(1)ls Commands:                    Lists contents of the current directory!
+    (i)ls -l                       File permissions, number of links, owner, group, size, modification time, and name!
+    (ii)ls -a                      Includes files starting with .
+    (iii)ls -A                     Excludes . and .. from the list
+    (iv)ls -lh                     Shows file sizes in a more readable format
+    (v)ls -R                       Lists contents of directories and all their subdirectories
+    (vi) ls -r                     Lists files in reverse order
+    (vii)ls -lt                    Files sorted by modification time
+    (viii) ls -lS                  Files sorted by size
+(2)man command:            It's a quick way to access the manual help pages (man pages) that describe how commands work.
+(3)pwd Command:            Displays the current working directory in the terminal OR simple words say PRESENT WORKING DIRECTORY!
+(4)cd (change directory):  Command is used to navigate between directories in a Linux system
+(5)wc Command:              The wc (word count) command in Linux is used to count the number of lines, words, characters, and bytes in a file or input from standard input.
+(6)cut and paste Command:   this command is used to cut from one directory and paste to another directory!
