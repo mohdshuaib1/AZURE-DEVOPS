@@ -18,8 +18,8 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'Docker_hub_SC'
-        repository: 'crestora/currency-devops'
+        containerRegistry: 'Docker-Hub_Sc'
+        repository: 'currency-exchange'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: |
