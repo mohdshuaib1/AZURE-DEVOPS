@@ -1,0 +1,41 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+- task: DownloadSecureFile@1
+  name: publickey
+  inputs:
+    secureFile: 'azure_ssh.pub'
+
+- task: TerraformInstaller@1
+  inputs:
+    terraformVersion: 'latest'
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
+    backendServiceArm: 'Azure resources service connection'
+    backendAzureRmResourceGroupName: 'terraform-backend-rg'
+    backendAzureRmStorageAccountName: 'storagebackend875030'
+    backendAzureRmContainerName: 'storageaccountcontainer'
+    backendAzureRmKey: 'tf/terraform.tfstate'
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'validate'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
+
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'destroy'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
+    environmentServiceNameAzureRM: 'Azure resources service connection'
