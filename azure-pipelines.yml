@@ -19,7 +19,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'Docker-Hub_Sc'
-        repository: 'currency-exchange'
+        repository: 'mohdshuaib07/currency-exchange'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: |
